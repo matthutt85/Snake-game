@@ -1,14 +1,10 @@
-# Snake-game
-Snake game
-
-## Thought process
-
 // SNAKE GAME
 
 
 // BODY
 // need a background that is going to be made of squares
 // --- can make this using a grid template 
+// --- add a div 
 
 
 // CHARACTER
@@ -42,6 +38,3 @@ Snake game
 // level 2 - you cant go outside the screen 
 // level 3 - the are blockades on the screen
 // level 4 - you cannot go outside the screen and there are blockades
-
-
-
