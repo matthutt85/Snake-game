@@ -2,9 +2,10 @@
 
 
 // BODY
-// need a background that is going to be made of squares
+// need a background image to cover the whole page
+// --- farm stle image, pixel image
 // --- can make this using a grid template 
-// --- add a div 
+// --- add a div which more divs can be added to through a function?
 
 
 // CHARACTER
