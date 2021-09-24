@@ -1,82 +1,29 @@
 @use "./base.scss" as *;
 
 
+.grid {
+    height: 60vh;
+    padding-left: 15%;
+    padding-right: 15%;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    border: 5px solid black;
 
-.title {
-    height: 20vh;
+    div {
+        border: 2px solid purple
+    }
+}
+
+.selectors {
+    height: 3rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    font-size: 6rem;
-    font-family: $title-font;
-    position: relative;
 
-    text-shadow:
-        0.05em 0 0 rgba(255,0,0,75),
-        -0.05em -.02em 0 rgba(0,255,0,75),
-        0.05em .02em 0 rgba(0,0,255,75);
-
-    animation: glitch 1000ms infinite;
+    
 }
 
-.title span {
-    position: absolute;
-    left: 40%;
-    top: 0;
-}
-
-.title span:first-child {
-    animation: glitch 1250ms infinite;
-}
-
-.title span:last-child {
-    animation: glitch 850ms infinite;
-}
-
-@keyframes glitch {
-    0% {
-        text-shadow:  0.05em 0 0 rgba(255,0,0,75),
-        -0.05em -.02em 0 rgba(0,255,0,75),
-        0.05em .02em 0 rgba(0,0,255,75);
-
-    }
-    14% {
-        text-shadow:  0.05em 0 0 rgba(255,0,0,75),
-        -0.05em -.02em 0 rgba(0,255,0,75),
-        0.05em .02em 0 rgba(0,0,255,75);
-
-    }
-    15% {
-        text-shadow:  -0.05em 0 0 rgba(255,0,0,75),
-        0.05em .02em 0 rgba(0,255,0,75),
-        -0.05em -.05em 0 rgba(0,0,255,75);
-
-    }
-    49% {
-        text-shadow:  -0.05em 0 0 rgba(255,0,0,75),
-        0.05em .02em 0 rgba(0,255,0,75),
-        -0.05em -.05em 0 rgba(0,0,255,75);
-
-    }
-    50% {
-        text-shadow:  0.05em 0.02em 0 rgba(255,0,0,75),
-        -0.05em -.02em 0 rgba(0,255,0,75),
-        0.05em -.02em 0 rgba(0,0,255,75);
-
-    }
-    99% {
-        text-shadow:  0.05em 0.02em 0 rgba(255,0,0,75),
-        -0.05em -.02em 0 rgba(0,255,0,75),
-        0.05em -.02em 0 rgba(0,0,255,75);
-
-    }
-    100% {
-        text-shadow:  -0.025em 0 0 rgba(255,0,0,75),
-        0.05em .02em 0 rgba(0,255,0,75),
-        -0.05em .02em 0 rgba(0,0,255,75);
-
-    }
-}
 
 
 

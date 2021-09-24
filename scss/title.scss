@@ -1,0 +1,79 @@
+@use "./base.scss" as *;
+
+
+.title {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    font-family: $title-font;
+    position: relative;
+    color: rgb(37, 4, 37);
+
+    text-shadow:
+        0.05em 0 0 rgba(255,0,0,.75),
+        -0.05em -.02em 0 rgba(0,255,0,.75),
+        0.05em .02em 0 rgba(0,0,255,.75);
+
+    animation: glitch 1000ms infinite;
+}
+
+.title span {
+    position: absolute;
+    left: 40%;
+    top: 0;
+}
+
+.title span:first-child {
+    animation: glitch 1250ms infinite;
+}
+
+.title span:last-child {
+    animation: glitch 850ms infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow:  0.05em 0 0 rgba(255,0,0,.75),
+        -0.05em -.02em 0 rgba(0,255,0,.75),
+        0.05em .02em 0 rgba(0,0,255,.75);
+
+    }
+    14% {
+        text-shadow:  0.05em 0 0 rgba(255,0,0,.75),
+        -0.05em -.02em 0 rgba(0,255,0,.75),
+        0.05em .02em 0 rgba(0,0,255,.75);
+
+    }
+    15% {
+        text-shadow:  -0.05em 0 0 rgba(255,0,0,.75),
+        0.05em .02em 0 rgba(0,255,0,.75),
+        -0.05em -.05em 0 rgba(0,0,255,.75);
+
+    }
+    49% {
+        text-shadow:  -0.05em 0 0 rgba(255,0,0,.75),
+        0.05em .02em 0 rgba(0,255,0,.75),
+        -0.05em -.05em 0 rgba(0,0,255,.75);
+
+    }
+    50% {
+        text-shadow:  0.05em 0.02em 0 rgba(255,0,0,.75),
+        -0.05em -.02em 0 rgba(0,255,0,.75),
+        0.05em -.02em 0 rgba(0,0,255,.75);
+
+    }
+    99% {
+        text-shadow:  0.05em 0.02em 0 rgba(255,0,0,.75),
+        -0.05em -.02em 0 rgba(0,255,0,.75),
+        0.05em -.02em 0 rgba(0,0,255,.75);
+
+    }
+    100% {
+        text-shadow:  -0.025em 0 0 rgba(255,0,0,.75),
+        0.05em .02em 0 rgba(0,255,0,.75),
+        -0.05em .02em 0 rgba(0,0,255,.75);
+
+    }
+}
