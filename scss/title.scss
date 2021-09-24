@@ -21,12 +21,12 @@
 
 .title span {
     position: absolute;
-    left: 40%;
+    left: 20%;
     top: 0;
 }
 
 .title span:first-child {
-    animation: glitch 1250ms infinite;
+    animation: glitch 3000ms infinite;
 }
 
 .title span:last-child {

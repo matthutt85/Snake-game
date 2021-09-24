@@ -1,13 +1,16 @@
 @use "./base.scss" as *;
 
 
+
+
 .grid {
-    height: 60vh;
+    height: 70vh;
     padding-left: 15%;
     padding-right: 15%;
     display: grid;
     grid-template-columns: repeat(15, 1fr);
     grid-template-rows: repeat(15, 1fr);
+    align-content: center;
     border: 20px solid brown;
 
     div {
@@ -37,6 +40,12 @@
         border: hidden;
         background-color: rgb(170, 31, 31);
         color:seashell;
+    }
+
+    &__score {
+        font-size: 25px;
+        font-weight: bolder;
+        color: whitesmoke;
     }
 }
 

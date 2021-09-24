@@ -11,12 +11,13 @@ html {
 }
 
 .grid {
-  height: 60vh;
+  height: 70vh;
   padding-left: 15%;
   padding-right: 15%;
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: repeat(15, 1fr);
+  align-content: center;
   border: 20px solid brown;
 }
 .grid div {
@@ -45,6 +46,11 @@ html {
   background-color: #aa1f1f;
   color: seashell;
 }
+.selectors__score {
+  font-size: 25px;
+  font-weight: bolder;
+  color: whitesmoke;
+}
 
 .title {
   height: 20vh;
@@ -61,12 +67,12 @@ html {
 
 .title span {
   position: absolute;
-  left: 40%;
+  left: 20%;
   top: 0;
 }
 
 .title span:first-child {
-  animation: glitch 1250ms infinite;
+  animation: glitch 3000ms infinite;
 }
 
 .title span:last-child {
