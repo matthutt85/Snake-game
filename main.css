@@ -17,7 +17,7 @@ html {
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: repeat(15, 1fr);
-  border: 5px solid black;
+  border: 20px solid brown;
 }
 .grid div {
   border: 2px solid purple;
@@ -29,6 +29,22 @@ html {
   justify-content: space-evenly;
   align-items: center;
 }
+.selectors__player1 {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: hidden;
+  background-color: #4168dd;
+  color: seashell;
+}
+.selectors__player2 {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: hidden;
+  background-color: #aa1f1f;
+  color: seashell;
+}
 
 .title {
   height: 20vh;
@@ -39,7 +55,7 @@ html {
   font-family: "Press Start 2P", cursive;
   position: relative;
   color: #250425;
-  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.02em 0 rgba(0, 255, 0, 0.75), 0.05em 0.02em 0 rgba(0, 0, 255, 0.75);
+  text-shadow: 0.05em 0 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em 0.02em 0 #4168dd;
   animation: glitch 1000ms infinite;
 }
 
@@ -59,24 +75,24 @@ html {
 
 @keyframes glitch {
   0% {
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.02em 0 rgba(0, 255, 0, 0.75), 0.05em 0.02em 0 rgba(0, 0, 255, 0.75);
+    text-shadow: 0.05em 0 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em 0.02em 0 #4168dd;
   }
   14% {
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.02em 0 rgba(0, 255, 0, 0.75), 0.05em 0.02em 0 rgba(0, 0, 255, 0.75);
+    text-shadow: 0.05em 0 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em 0.02em 0 #4168dd;
   }
   15% {
-    text-shadow: -0.05em 0 0 rgba(255, 0, 0, 0.75), 0.05em 0.02em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    text-shadow: -0.05em 0 0 #aa1f1f, 0.05em 0.02em 0 rgba(45, 231, 8, 0.75), -0.05em -0.05em 0 #4168dd;
   }
   49% {
-    text-shadow: -0.05em 0 0 rgba(255, 0, 0, 0.75), 0.05em 0.02em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    text-shadow: -0.05em 0 0 #aa1f1f, 0.05em 0.02em 0 rgba(45, 231, 8, 0.75), -0.05em -0.05em 0 #4168dd;
   }
   50% {
-    text-shadow: 0.05em 0.02em 0 rgba(255, 0, 0, 0.75), -0.05em -0.02em 0 rgba(0, 255, 0, 0.75), 0.05em -0.02em 0 rgba(0, 0, 255, 0.75);
+    text-shadow: 0.05em 0.02em 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em -0.02em 0 #4168dd;
   }
   99% {
-    text-shadow: 0.05em 0.02em 0 rgba(255, 0, 0, 0.75), -0.05em -0.02em 0 rgba(0, 255, 0, 0.75), 0.05em -0.02em 0 rgba(0, 0, 255, 0.75);
+    text-shadow: 0.05em 0.02em 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em -0.02em 0 #4168dd;
   }
   100% {
-    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75), 0.05em 0.02em 0 rgba(0, 255, 0, 0.75), -0.05em 0.02em 0 rgba(0, 0, 255, 0.75);
+    text-shadow: -0.025em 0 0 #aa1f1f, 0.05em 0.02em 0 rgba(45, 231, 8, 0.75), -0.05em 0.02em 0 #4168dd;
   }
 }
