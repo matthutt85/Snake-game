@@ -11,18 +11,18 @@ html {
   background-size: cover;
 }
 
-.grid {
-  height: 70vh;
-  padding-left: 15%;
-  padding-right: 15%;
-  display: grid;
-  grid-template-columns: repeat(15, 1fr);
-  grid-template-rows: repeat(15, 1fr);
-  align-content: center;
-  border: 20px solid brown;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.grid div {
-  border: 2px solid purple;
+.container__game-board {
+  border: 5px solid brown;
+  height: 70vh;
+  width: 100vmin;
+  display: grid;
+  grid-template-rows: repeat(21, 1fr);
+  grid-template-columns: repeat(21, 1fr);
 }
 
 .selectors {
@@ -55,6 +55,16 @@ html {
   font-weight: bolder;
   color: whitesmoke;
   font-family: "Titan One", cursive;
+}
+
+.snake {
+  background-color: cornflowerblue;
+  border: 0.25vmin solid black;
+}
+
+.food {
+  background-color: darkgoldenrod;
+  border: 0.25vmin solid black;
 }
 
 .title__wrapper {
