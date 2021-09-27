@@ -1,5 +1,5 @@
 import { snakeContact, snakeGrow } from "./snake.js"
-import { randomGridPosition } from "./snake.js"
+import { randomGridPosition } from "./grid"
 
 let food = getRandomFoodPosition()
 const snakeSize = 1
@@ -22,7 +22,7 @@ export let draw = (gameBoard) => {
 
 }
 
-const getRandomFoodPosition = () => {
+let getRandomFoodPosition = () => {
     let newFoodPosition
     while (newFoodPosition == null || snakeContact(newFoodPosition)) {
         newFoodPosition = randomGridPosition()
