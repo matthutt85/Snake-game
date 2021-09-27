@@ -19,6 +19,7 @@
 }
 
 .selectors {
+    margin-top: 170px;
     height: 3rem;
     display: flex;
     justify-content: space-evenly;
@@ -31,6 +32,7 @@
         border: hidden;
         background-color: rgb(65, 104, 221);
         color:seashell;
+        font-family: $title-font;
     }
 
     &__player2 {
@@ -40,12 +42,14 @@
         border: hidden;
         background-color: rgb(170, 31, 31);
         color:seashell;
+        font-family: $title-font;
     }
 
     &__score {
         font-size: 25px;
         font-weight: bolder;
         color: whitesmoke;
+        font-family: $title-font;
     }
 }
 

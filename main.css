@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
 }
 
 html {
-  background: url("images/snakeback.png") no-repeat center center fixed;
+  background: url("images/snakebackground.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -25,6 +26,7 @@ html {
 }
 
 .selectors {
+  margin-top: 170px;
   height: 3rem;
   display: flex;
   justify-content: space-evenly;
@@ -37,6 +39,7 @@ html {
   border: hidden;
   background-color: #4168dd;
   color: seashell;
+  font-family: "Titan One", cursive;
 }
 .selectors__player2 {
   margin: 10px;
@@ -45,60 +48,65 @@ html {
   border: hidden;
   background-color: #aa1f1f;
   color: seashell;
+  font-family: "Titan One", cursive;
 }
 .selectors__score {
   font-size: 25px;
   font-weight: bolder;
   color: whitesmoke;
+  font-family: "Titan One", cursive;
 }
 
-.title {
-  height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 6rem;
-  font-family: "Press Start 2P", cursive;
-  position: relative;
-  color: #250425;
-  text-shadow: 0.05em 0 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em 0.02em 0 #4168dd;
-  animation: glitch 1000ms infinite;
+.title__wrapper {
+  width: 100vw;
+  text-align: center;
+}
+.title__wrapper span {
+  -webkit-text-stroke-width: 1.25px;
+  -webkit-text-stroke-color: #000;
+  font-size: 100px;
+  text-shadow: 0 0px #f3c623, 0 0px #f2aaaa;
+  transform: translate(0, 100%) rotate(4deg);
+  animation: jump 2s ease-in-out infinite;
+  display: inline-block;
+  font-family: "Titan One", cursive;
+  color: #fff;
+}
+.title__wrapper span:nth-child(1) {
+  animation-delay: 120ms;
+}
+.title__wrapper span:nth-child(2) {
+  animation-delay: 240ms;
+}
+.title__wrapper span:nth-child(3) {
+  animation-delay: 360ms;
+}
+.title__wrapper span:nth-child(4) {
+  animation-delay: 480ms;
+}
+.title__wrapper span:nth-child(5) {
+  animation-delay: 600ms;
 }
 
-.title span {
-  position: absolute;
-  left: 20%;
-  top: 0;
-}
-
-.title span:first-child {
-  animation: glitch 3000ms infinite;
-}
-
-.title span:last-child {
-  animation: glitch 850ms infinite;
-}
-
-@keyframes glitch {
-  0% {
-    text-shadow: 0.05em 0 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em 0.02em 0 #4168dd;
-  }
-  14% {
-    text-shadow: 0.05em 0 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em 0.02em 0 #4168dd;
-  }
-  15% {
-    text-shadow: -0.05em 0 0 #aa1f1f, 0.05em 0.02em 0 rgba(45, 231, 8, 0.75), -0.05em -0.05em 0 #4168dd;
-  }
-  49% {
-    text-shadow: -0.05em 0 0 #aa1f1f, 0.05em 0.02em 0 rgba(45, 231, 8, 0.75), -0.05em -0.05em 0 #4168dd;
+@keyframes jump {
+  33% {
+    text-shadow: 0 60px #f37121, 0 150px #f2aaaa;
   }
   50% {
-    text-shadow: 0.05em 0.02em 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em -0.02em 0 #4168dd;
+    transform: translate(0, 0) rotate(-4deg);
+    text-shadow: 0 0px #8fc0a9, 0 0px #84a9ac;
   }
-  99% {
-    text-shadow: 0.05em 0.02em 0 #aa1f1f, -0.05em -0.02em 0 rgba(45, 231, 8, 0.75), 0.05em -0.02em 0 #4168dd;
+  66.67% {
+    text-shadow: 0 -60px #d54062, 0 -150px #8fc0a9;
   }
-  100% {
-    text-shadow: -0.025em 0 0 #aa1f1f, 0.05em 0.02em 0 rgba(45, 231, 8, 0.75), -0.05em 0.02em 0 #4168dd;
+}
+@media screen and (max-height: 200px) {
+  .wrapper {
+    transform: scale(0.3, 0.3);
+  }
+}
+@media screen and (max-width: 576px) {
+  .wrapper span {
+    font-size: 50px;
   }
 }

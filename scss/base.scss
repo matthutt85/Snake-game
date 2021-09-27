@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
 
-$title-font: 'Press Start 2P', cursive;
+$title-font: "Titan One", cursive;
 
 
 * {
@@ -10,7 +11,7 @@ $title-font: 'Press Start 2P', cursive;
 }
 
 html {
-    background: url('images/snakeback.png') no-repeat center center fixed; 
+    background: url('images/snakebackground.jpg') no-repeat center center fixed; 
     background-size: cover;
 
 }
