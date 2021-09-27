@@ -34,10 +34,19 @@ export const snakeGrow = (amount) => {
     newSegments += amount
 }
 
-export const snakeContact = (position) => {
-    return snakeBody.some(segment => {
+export const snakeContact = (position, { ignoreHead = false } = {}) => {
+    return snakeBody.some((segment, index) => {
+        if (ignoreHead && index === 0) return false
         return samePosition(segment, position)
     })
+}
+
+export const getSnakeHead = () => {
+    return snakeBody[0]
+}
+
+export const snakeIntersection = () => {
+    return snakeContact(snakeBody[0], { igrnoreHead: true})
 }
 
 const samePosition = (pos1, pos2) => {
