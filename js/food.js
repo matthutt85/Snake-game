@@ -1,12 +1,13 @@
 import { snakeContact, snakeGrow } from "./snake.js"
+import { randomGridPosition } from "./snake.js"
 
-let food = { x: 10, y: 1 }
+let food = getRandomFoodPosition()
 const snakeSize = 1
 
 export let update = () => {
    if (snakeContact (food)) {
       snakeGrow(snakeSize) 
-      food = { x: 20, y: 10}
+      food = getRandomFoodPosition()
    }
 }
 
@@ -21,3 +22,10 @@ export let draw = (gameBoard) => {
 
 }
 
+const getRandomFoodPosition = () => {
+    let newFoodPosition
+    while (newFoodPosition == null || snakeContact(newFoodPosition)) {
+        newFoodPosition = randomGridPosition()
+    }
+    return newFoodPosition
+}
