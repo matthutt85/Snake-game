@@ -19,7 +19,7 @@ export let draw = (gameBoard) => {
         foodElement.style.gridColumnStart = food.x
         foodElement.classList.add('food')
         gameBoard.appendChild(foodElement)
-
+    console.log(foodElement)
 }
 
 const getRandomFoodPosition = () => {
