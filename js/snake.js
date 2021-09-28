@@ -1,31 +1,28 @@
 import { getInputDirection } from "./input.js"
 
-export const snakeSpeed = 3
+export const snakeSpeed = 1  // speed at which the snake travels according to the main function
+const snakeBody = [{ x: 11, y: 11}]  // starting point for the snake head
+let newSegments = 0 // default snake is not growing
 
-const snakeBody = [{x: 11, y: 11}]
-let newSegments = 0
+export const update = () => {
+    addSegements()
 
-
-export let update = () => {
-    addSegments()
-
-    const inputDirection = getInputDirection()
-    for (let i = snakeBody.length - 2; i >= 0; i--) {
+    const inputDirection = getInputDirection()  // link to the input file for addlistener
+    for (let i = snakeBody.length - 2; i >= 0; i--) { // selects the middle element
         snakeBody[i + 1] = { ...snakeBody[i] }
     }
 
-    snakeBody[0].x += inputDirection.x
-    snakeBody[0].y += inputDirection.y
+    snakeBody[0].x += inputDirection.x // move the snake along the x axis
+    snakeBody[0].y += inputDirection.y // move the snake along the y axis
 }
 
-
-export let draw = (gameBoard) => {
-    snakeBody.forEach(segment => {
-        const snakeElement = document.createElement('div')
-        snakeElement.style.gridRowStart = segment.y
-        snakeElement.style.gridColumnStart = segment.x
-        snakeElement.classList.add('snake')
-        gameBoard.appendChild(snakeElement)
+export const draw = (gameBoard) => {    // function for drawing the snake in
+    snakeBody.forEach(snakePart => {
+        const snakeElement = document.createElement('div') //this creates a single div for the snake element
+        snakeElement.style.gridRowStart = snakePart.y   //assign the snakelement to the x axis
+        snakeElement.style.gridColumnStart = snakePart.x  //assign the snakelement to the y axis
+        snakeElement.classList.add('snake')  // add in the styles using classlist
+        gameBoard.appendChild(snakeElement)  // appends the snake to the gameboard
 
     })
 }
@@ -34,32 +31,23 @@ export const snakeGrow = (amount) => {
     newSegments += amount
 }
 
-export const snakeContact = (position, { ignoreHead = false } = {}) => {
-    return snakeBody.some((segment, index) => {
-        if (ignoreHead && index === 0) return
-        return samePosition(segment, position)
+export const snakeContact = (position) => {
+    return snakeBody.some(segment => {  //.some if any part of the body
+        return equalPositions(segment, position)
     })
 }
 
-export const getSnakeHead = () => {
-    return snakeBody[0]
+const equalPositions = (pos1, pos2) => { // if the snake and food are on the same square
+    return pos1.x === pos2.x && pos1.y ===pos2.y 
 }
 
-export const snakeIntersection = () => {
-    return snakeContact(snakeBody[0], { igrnoreHead: true})
-}
-
-const samePosition = (pos1, pos2) => {
-    return (
-        pos1.x === pos2.x && pos1.y === pos2.y
-    )
-}
-
-const addSegments = () => {
+const addSegements = () => { // take the end element and duplicate it onto the end
     for (let i = 0; i < newSegments; i++) {
-        snakeBody.push({ ...snakeBody[snakeBody.length - 1]})
+        snakeBody.push({ ...snakeBody[snakeBody.length -1]})
     }
 
     newSegments = 0
 }
+
+
 
