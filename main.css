@@ -60,6 +60,7 @@ html {
 .snake {
   background-color: cornflowerblue;
   border: 0.25vmin solid black;
+  border-radius: 50px;
 }
 
 .food {

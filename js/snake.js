@@ -1,6 +1,8 @@
 import { getInputDirection } from "./input.js"
 
-export const snakeSpeed = 1  // speed at which the snake travels according to the main function
+
+
+export const snakeSpeed = 7  // speed at which the snake travels according to the main function
 const snakeBody = [{ x: 11, y: 11}]  // starting point for the snake head
 let newSegments = 0 // default snake is not growing
 
@@ -17,8 +19,8 @@ export const update = () => {
 }
 
 export const draw = (gameBoard) => {    // function for drawing the snake in
-    snakeBody.forEach(snakePart => {
-        const snakeElement = document.createElement('div') //this creates a single div for the snake element
+    snakeBody.forEach(snakePart => {    // for each snake body part
+        const snakeElement = document.createElement('div') //create a single div for the snake element
         snakeElement.style.gridRowStart = snakePart.y   //assign the snakelement to the x axis
         snakeElement.style.gridColumnStart = snakePart.x  //assign the snakelement to the y axis
         snakeElement.classList.add('snake')  // add in the styles using classlist
@@ -31,10 +33,19 @@ export const snakeGrow = (amount) => {
     newSegments += amount
 }
 
-export const snakeContact = (position) => {
-    return snakeBody.some(segment => {  //.some if any part of the body
+export const snakeContact = (position, { ignoreHead = false} = {}) => {
+    return snakeBody.some((segment, index) => { 
+        if (ignoreHead && index === 0) return false //.some if any part of the body
         return equalPositions(segment, position)
     })
+}
+
+export const getSnakeHead = () => {
+    return snakeBody[0]
+}
+
+export const snakeIntersection = () => {
+    return snakeContact(snakeBody[0], {ignoreHead: true})
 }
 
 const equalPositions = (pos1, pos2) => { // if the snake and food are on the same square
